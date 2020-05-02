@@ -1,0 +1,289 @@
+:root {
+  --base-grey: #b2b4b2;
+  --darker-grey: #707372;
+  --darkest-grey: #54585a;
+  --light-purple: #a7a4e0;
+  --dark-purple: #514689;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-style: italic;
+}
+
+.flex-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.screen {
+  height: 100vh;
+}
+
+.base {
+  background-color: var(--base-grey);
+}
+
+.holder {
+  width: 201px;
+  height: 201px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.holder-left {
+  left: 95px;
+  z-index: 1;
+}
+
+.left-innercircle {
+  width: 110px;
+  height: 110px;
+  border: 2px solid rgba(0, 0, 0, .1);
+  border-radius: 50%;
+}
+
+.cross {
+  flex-flow: column;
+}
+
+.cross .up, .left, .cross-center, .right, .down{
+  width: 25px;
+  height: 25px;
+  background-color: var(--darkest-grey);
+}
+
+.up {
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+}
+
+.left {
+  border-top-left-radius: 10%;
+  border-bottom-left-radius: 10%;
+}
+
+.right {
+  border-top-right-radius: 10%;
+  border-bottom-right-radius: 10%;
+}
+
+.down {
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
+}
+
+.direction {
+  width: 15px;
+  height: 15px;
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.up .direction {
+  top: -5px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.left .direction {
+  clip-path: polygon(0% 50%, 100% 100%, 100% 0%);
+}
+
+.right .direction {
+  clip-path: polygon(0% 0%, 0% 100%, 100% 50%);
+}
+
+.down .direction {
+  clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+}
+
+.cross-center div {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(0, 0, 0, .1);
+  border-radius: 50%;
+}
+
+.center {
+  width: 260px;
+  height: 175px;
+  position: relative;
+  align-items: flex-end;
+  bottom: 13px;
+}
+
+.center .cavity {
+  position: absolute;
+  width: 20px;
+  height: 5px;
+  top: 0;
+  border: 2px solid rgba(0, 0, 0, .1);
+  border-top: none;
+}
+
+.center p {
+  color: var(--darkest-grey);
+}
+
+.center .brand {
+  position: absolute;
+  top: 10px;
+  flex-flow: column;
+}
+
+.brand .brand-title {
+  font-size: 10px;
+}
+
+.brand .brand-subtitle {
+  font-size: 7px;
+  color: var(--base-grey);
+  background-color: var(--darkest-grey);
+  padding: 0 2px;
+}
+
+.center-button-group {
+  position: relative;
+  bottom: 30px;
+  right: 6px;
+}
+
+.center-button-group p {
+  font-size: 6px;
+  margin-top: 10px;
+}
+
+.center-button-group .center-button {
+  flex-flow: column;
+}
+
+.start-select {
+  margin: 0 14px;
+  transform: rotate(45deg);
+}
+
+.start-select, .start-select > div {
+  background-color: var(--darkest-grey);
+}
+
+.start-select .top, .bottom {
+  width: 10px;
+  height: 10px;
+  background-color: var(--darkest-grey);
+  border-radius: 50%;
+}
+
+.start-select .top {
+  position: relative;
+  top: -5px;
+}
+
+.start-select .bottom {
+  position: relative;
+  bottom: -5px;
+}
+
+.holder-right {
+  right: 95px;
+  z-index: 1;
+}
+
+.right-innercircle {
+  flex-flow: column;
+  width: 180px;
+  height: 180px;
+  background-color: var(--darker-grey);
+  border-radius: 50%;
+  color: var(--base-grey);
+}
+
+.right-innercircle::after {
+  content: "";
+  position: relative;
+  align-self: flex-end;
+  width: 3px;
+  height: 3px;
+  right: 15px;
+  bottom: -50px;
+  background-color: var(--base-grey);
+  border-radius: 50%;
+}
+
+.button-group {
+  position: absolute;
+  margin: 5px 0;
+  transform: rotate(-45deg);
+}
+
+.button-group::before {
+  content: "";
+  position: absolute;
+  width: 75px;
+  height: 40px;
+  background-color: var(--base-grey);
+  z-index: -1;
+}
+
+.button-group:first-child {
+  transform-origin: left;
+}
+
+.letter {
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+.button-group:first-child::before {
+  clip-path: polygon(0% 0%, 75% 0%, 75% 100%, 0% 100%);
+}
+
+.button-group:first-child .letter:first-child {
+  left: -38px;
+}
+
+.button-group:first-child .letter:last-child {
+  right: -18px;
+}
+
+.button-group:first-child .button:nth-child(2) {
+  left: -20px;
+}
+
+.button-group:last-child {
+  transform-origin: right;
+}
+
+.button-group:last-child::before {
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%);
+}
+
+.button-group:last-child .letter:first-child {
+  left: -18px;
+}
+
+.button-group:last-child .letter:last-child {
+  right: -38px;
+}
+
+.button-group:last-child .button:nth-child(3) {
+  right: -20px;
+}
+
+.button {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--base-grey);
+  border-radius: 50%;
+}
+
+.x-and-y {
+  background-color: var(--light-purple);
+}
+
+.a-and-b {
+  background-color: var(--dark-purple);
+}
