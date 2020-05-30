@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+#wraper {
+  width: 100vw;
+  height: 100vh;
+  background-color: #212121;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#wraper::before {
+  content: "";
+  width: 50%;
+  height: 50%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #424242;
+  opacity: .3;
+}
+
+#wraper::after {
+  content: "";
+  width: 50%;
+  height: 50%;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background-color: #424242;
+  opacity: .3;
+}
+
+.indicator {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  z-index: 1;
+}
+
+#clock {
+  width: 300px;
+  height: 300px;
+}
+
+svg path {
+  fill: none;
+  stroke-width: 2;
+}
+
+svg path:first-child {
+  stroke-opacity: .3;
+  stroke-dasharray: 100, 100;
+}
+
+svg path:last-child {
+  stroke-dasharray: 0, 100;
+}
+
+#day path {
+  stroke: cyan;
+}
+
+#hour {
+  padding: 20px;
+}
+
+#hour path {
+  stroke: magenta;
+}
+
+#minute {
+  padding: 38px;
+}
+
+#minute path {
+  stroke: lime;
+}
+
+#timer-box {
+  font-size: 1.5em;
+  font-weight: bolder;
+  color: white;
+  z-index: 1;
+}
