@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+#container {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 10px;
+  overflow: hidden;
+}
+
+#container:hover {
+  overflow: auto;
+}
+
+#inputs {
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+i.rotate {
+  transform: rotate(45deg);
+}
+
+i.arrow,
+.button-group {
+  margin: 0 10px;
+}
+
+.button-group.four-buttons {
+  transform: rotate(-45deg);
+  display: inline-block;
+}
+
+.top {
+  margin-bottom: 3px;
+}
+
+.top,
+.bottom {
+  display: flex;
+}
+
+.top i,
+.bottom i {
+  margin-right: 3px;
+}
